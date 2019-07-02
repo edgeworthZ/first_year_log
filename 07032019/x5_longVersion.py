@@ -1,5 +1,4 @@
 a,b,c = [int(x) for x in input('Enter 3 numbers: ').split()]
-#minNum = min(a,b,c)
 if(a<b):
     if(a<c):
         minNum = a
