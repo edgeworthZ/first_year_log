@@ -1,0 +1,11 @@
+Variable and Expression - Exercises
+1.3+6*(5+4)/3-7 ==> Arithmetic, 14
+2.5 is a factor of 153 ==> Boolean, false
+3.x*(x^x/x)/x*(x^x)^(-1)*x, when x = 5 ==> Arithmetic, 1
+4.(5*2-3^0==1)and(20-10/9*2^5-9<0) ==> Boolean, False
+5.(5+4*3)-10%9 ==> Arithmetic, 16
+6.Theresa May is the prime minister of the United Kingdom ==> Boolean, True
+7.(2-7*2^5-9/3!=0)or not(33^(5%2-1)-999>=0) ==> Boolean, True
+8.4+2*4^0-7%3 ==> Arithmetic, 5
+9.True and False or False ==> Boolean, False
+10.9*5^(73/2-36)-55 ==> Arithmetic, -34.875388202501895
