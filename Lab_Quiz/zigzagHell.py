@@ -1,4 +1,4 @@
-def LowerLeft(c,i,j): # Navigate from current pos to lower left until it hits border
+def LowerRight(c,i,j): # Navigate from current pos to lower left until it hits border
     while(i+1 < len(grid)): # Checking only row is enough, it won't hit column's border
         if c > len(txt)-2: break
         c,i,j = c+1,i+1,j+1
@@ -37,10 +37,10 @@ while(c < len(txt)-1):
     c,i,j = Down(c,i,j)
     for k in range(2):
         c,i,j = UpperRight(c,i,j)
-        c,i,j = LowerLeft(c,i,j)
+        c,i,j = LowerRight(c,i,j)
     c,i,j = Up(c,i,j)
     for k in range(2):
-        c,i,j = LowerLeft(c,i,j)
+        c,i,j = LowerRight(c,i,j)
         c,i,j = UpperRight(c,i,j)
 
 for row in grid:
@@ -51,13 +51,13 @@ for row in grid:
 ''' ### Pattern ###
     Down()
     UpperRight()
-    LowerLeft()
+    LowerRight()
     UpperRight()
-    LowerLeft()
+    LowerRight()
     Up()
-    LowerLeft()
+    LowerRight()
     UpperRight()
-    LowerLeft()
+    LowerRight()
     UpperRight()
     Continue from the first-->
     ###############
