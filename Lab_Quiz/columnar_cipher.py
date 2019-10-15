@@ -23,4 +23,4 @@ for k in upTable.keys(): # Read by keywords' order
     j = kw.index(upTable[k])
     for i in range(len(lowTable)):
         res = res + lowTable[i][j]
-print(res)
+print('"{res}'')
