@@ -37,4 +37,4 @@ for i in range(0,len(table),2): # Read each set of 2 characters
             res = res + key.lower() # i/j will come in pair
 allres = set()
 ToIJ(res.replace('ij','j')) # Get all variations of i/j
-for t in allres: print(t)
+for t in allres: print(f'"{t}"')
