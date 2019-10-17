@@ -7,7 +7,7 @@ def getAbsolute(ss):
     return res
 
 def getAveragePlate(grid):
-    dicP = {'A':0,'B':0,'C':0,'-':0}
+    dicP = {'A':0,'B':0,'C':0,'N':0}
     for i in range(len(grid)):
         for key,val in dic.items():
             if grid[i] > val: dicP[key] += 1
@@ -16,7 +16,7 @@ def getAveragePlate(grid):
 size = int(input('Material size: '))
 grid = list()
 absList = list()
-dic = {'A':85,'B':70,'C':60,'-':0}
+dic = {'A':85,'B':70,'C':60,'N':0}
 plateList = list()
 
 for _ in range(size):
@@ -39,7 +39,7 @@ for key,val in upgradeDic.items():
         maxUpgrade = key
         break
     
-if ord(currentGrade) > ord(maxUpgrade):
+if ord(currentGrade) - ord(maxUpgrade) == 1:
     print(f'Grade {maxUpgrade}(Upgrade from {currentGrade})')
 else:
     print(f'Grade {currentGrade}')
