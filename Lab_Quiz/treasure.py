@@ -8,12 +8,14 @@ def VectorToLetter(i,j):
 def Raycast(startI,startJ,directionI,directionJ,start,stop,step,res):
     for i in range(start, stop,step):
         if grid[startI+directionI*step][startJ+directionJ*step] == '2':
-            #print('Found a way!')
+            #print('Found a way! ',res+VectorToLetter(directionI*step,directionJ*step))
             paths.append(res+VectorToLetter(directionI*step,directionJ*step))
             break
-        elif grid[startI+directionI*step][startJ+directionJ*step] ==  'x':
+        elif grid[startI+directionI*step][startJ+directionJ*step] ==  'x' and (startI,startJ) not in prevVisits: # Prevent looping back to previously visited location
+            #print((startI,startJ),'pv:',prevVisits)
             #print('Found x at',startI+directionI*step,startJ+directionJ*step)
             if i != start: # No need to consider surrounding 'x'
+                prevVisits.append((startI,startJ))
                 ScanLocalXAxis(startI,startJ,directionJ,directionI,res+VectorToLetter(directionI*step,directionJ*step))
             break
         startI += directionI*step
@@ -32,7 +34,7 @@ def ScanLocalXAxis(worldPosI,worldPosJ,rotationI,rotationJ,res=''): # No need to
     Raycast(worldPosI,worldPosJ,rotationI,rotationJ,targetWorldPos, endBorder, 1,res) # Go Right
 
 size = int(input('Size : '))
-grid,paths = list(),list()
+grid,paths,prevVisits = list(),list(),list() # grid for map, paths for result, prevVisits to collect all tiles that we've been before
 for row in range(size): # Get data from input
     col = [x for x in input().split()]
     if '1' in col: playerPosI,playerPosJ = row,col.index('1')
