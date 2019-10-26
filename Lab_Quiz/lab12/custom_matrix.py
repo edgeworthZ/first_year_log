@@ -102,9 +102,63 @@ formulas = {'A':A,
             'matrix identity(2x2)':matrix.identity((2,2)),
             '(A**2 + matrix.ones((2,2))) + (B*3)**t - A**-1':(A**2 + matrix.ones((2,2))) + (B*3)**t - A**-1}
 
+#for mat in matrix.members: print(mat.__dict__)
 for key,val in formulas.items():
     print(f'Result of {key}:')
     val.print()
     print('----------------')
-    
-#for mat in matrix.members: print(mat.__dict__)
+
+'''
+Result of A:
+     1      2 
+     3      4 
+----------------
+Result of B:
+     5      6 
+     7      8 
+----------------
+Result of A+B:
+     6      8 
+    10     12 
+----------------
+Result of A-B:
+    -4     -4 
+    -4     -4 
+----------------
+Result of A*2:
+     2      4 
+     6      8 
+----------------
+Result of B**t:
+     5      7 
+     6      8 
+----------------
+Result of A*B:
+    19     22 
+    43     50 
+----------------
+Result of A**-1 (Inverse of A):
+  -2.0    1.0 
+   1.5   -0.5 
+----------------
+Result of A*A**-1 (A X Inverse of A):
+   1.0    0.0 
+   0.0    1.0 
+----------------
+Result of matrix zeros(2x2):
+     0      0 
+     0      0 
+----------------
+Result of matrix ones(2x2):
+     1      1 
+     1      1 
+----------------
+Result of matrix identity(2x2):
+     1      0 
+     0      1 
+----------------
+Result of (A**2 + matrix.ones((2,2))) + (B*3)**t - A**-1:
+  25.0   31.0 
+  32.5   47.5 
+----------------
+'''
